@@ -223,6 +223,10 @@ GraphicsContext::Traits::Traits(DisplaySettings* ds):
             alpha(0),
             depth(24),
             stencil(0),
+            accum_red(0),
+            accum_green(0),
+            accum_blue(0),
+            accum_alpha(0),
             sampleBuffers(0),
             samples(0),
             pbuffer(false),
@@ -253,6 +257,10 @@ GraphicsContext::Traits::Traits(DisplaySettings* ds):
         stencil = ds->getMinimumNumStencilBits();
         if (ds->getMultiSamples()!=0) sampleBuffers = 1;
         samples = ds->getNumMultiSamples();
+        accum_red = ds->getMinimumNumAccumRedBits();
+        accum_green = ds->getMinimumNumAccumGreenBits();
+        accum_blue = ds->getMinimumNumAccumBlueBits();
+        accum_alpha = ds->getMinimumNumAccumAlphaBits();
         if (ds->getStereo())
         {
             switch(ds->getStereoMode())

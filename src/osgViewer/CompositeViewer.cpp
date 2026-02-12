@@ -984,7 +984,8 @@ void CompositeViewer::eventTraversal()
 
     if (_views.empty()) return;
 
-    double cutOffTime = _frameStamp->getReferenceTime();
+    //double cutOffTime = _frameStamp->getReferenceTime();
+    double cutOffTime = (_runFrameScheme==ON_DEMAND) ? DBL_MAX : _frameStamp->getReferenceTime();   // added by leigh
 
     double beginEventTraversal = osg::Timer::instance()->delta_s(_startTick, osg::Timer::instance()->tick());
 

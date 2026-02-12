@@ -719,6 +719,7 @@ GLExtensions::GLExtensions(unsigned int in_contextID):
     setGLExtensionFuncPtr(glBindBufferRange, "glBindBufferRange", validContext);
     setGLExtensionFuncPtr(glBindBufferBase,  "glBindBufferBase", "glBindBufferBaseEXT", "glBindBufferBaseNV" , validContext);
     setGLExtensionFuncPtr(glTexBuffer, "glTexBuffer","glTexBufferARB" , validContext);
+    setGLExtensionFuncPtr(glClearBufferuiv, "glClearBufferuiv");
 
     isVBOSupported = validContext && (OSG_GLES2_FEATURES || OSG_GLES3_FEATURES || OSG_GL3_FEATURES || osg::isGLExtensionSupported(contextID,"GL_ARB_vertex_buffer_object"));
     isPBOSupported = validContext && ((OSG_GLES3_FEATURES && glVersion >= 3.0) || OSG_GL3_FEATURES || osg::isGLExtensionSupported(contextID,"GL_ARB_pixel_buffer_object"));

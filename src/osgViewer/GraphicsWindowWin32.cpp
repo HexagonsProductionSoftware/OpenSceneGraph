@@ -1747,7 +1747,11 @@ static void PreparePixelFormatSpecifications( const osg::GraphicsContext::Traits
     if (traits.stencil)       attributes.set(WGL_STENCIL_BITS_ARB,   traits.stencil);
     if (traits.sampleBuffers) attributes.set(WGL_SAMPLE_BUFFERS_ARB, traits.sampleBuffers);
     if (traits.samples)       attributes.set(WGL_SAMPLES_ARB,        traits.samples);
-
+    if (traits.accum_red)     attributes.set(WGL_ACCUM_RED_BITS_ARB,   traits.accum_red);
+    if (traits.accum_green)   attributes.set(WGL_ACCUM_GREEN_BITS_ARB, traits.accum_green);
+    if (traits.accum_blue)    attributes.set(WGL_ACCUM_BLUE_BITS_ARB,  traits.accum_blue);
+    if (traits.accum_alpha)   attributes.set(WGL_ACCUM_ALPHA_BITS_ARB, traits.accum_alpha);
+	
     if (traits.quadBufferStereo) attributes.enable(WGL_STEREO_ARB);
 
     attributes.end();

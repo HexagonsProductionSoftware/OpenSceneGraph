@@ -415,6 +415,8 @@ class OSG_EXPORT GLExtensions : public osg::Referenced
         void (GL_APIENTRY * glBindBufferRange) (GLenum target, GLuint index, GLuint buffer, GLintptr offset, GLsizeiptr size);
         void (GL_APIENTRY * glBindBufferBase) (GLenum target, GLuint index, GLuint buffer);
         void (GL_APIENTRY * glTexBuffer) (GLenum target, GLenum internalFormat, GLuint buffer);
+        void (GL_APIENTRY * glClearBufferuiv) (GLenum buffer, GLint drawBuffer, const GLuint * value);
+
 
         void (GL_APIENTRY * glMemoryBarrier)( GLbitfield barriers );
 

@@ -1126,10 +1126,15 @@ bool State::setClientActiveTextureUnit( unsigned int unit )
     if (_currentClientActiveTextureUnit!=unit)
     {
         // OSG_NOTICE<<"State::setClientActiveTextureUnit( "<<unit<<") done"<<std::endl;
-
-        _glClientActiveTexture(GL_TEXTURE0+unit);
-
-        _currentClientActiveTextureUnit = unit;
+        if (_glClientActiveTexture && unit < (unsigned int)_glMaxTextureCoords)
+        {
+           _glClientActiveTexture(GL_TEXTURE0+unit);
+           _currentClientActiveTextureUnit = unit;
+        }
+        else
+        {
+           return unit==0;
+        }
     }
     else
     {

@@ -94,6 +94,10 @@ class OSG_EXPORT GraphicsContext : public Object
             unsigned int alpha;
             unsigned int depth;
             unsigned int stencil;
+            unsigned int accum_red;
+            unsigned int accum_green;
+            unsigned int accum_blue;
+            unsigned int accum_alpha;
 
             // multi sample parameters
             unsigned int sampleBuffers;
